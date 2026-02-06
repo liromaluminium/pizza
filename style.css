@@ -1,0 +1,328 @@
+:root {
+  --primary-red: #ff3b30;
+  --dark-bg: #0d0d0d;
+  --card-bg: #1a1a1a;
+  --card-bg2: rgba(26, 26, 26, 0.85);
+  --text-light: #ffffff;
+  --text-muted: #cccccc;
+  --accent-glow: rgba(255, 59, 48, 0.4);
+  --shadow-heavy: 0 20px 60px rgba(0, 0, 0, 0.7);
+  --shadow-glow: 0 0 30px var(--accent-glow);
+  --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Assistant", sans-serif;
+  background: var(--dark-bg);
+  color: var(--text-light);
+  line-height: 1.7;
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(255, 59, 48, 0.08) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(255, 59, 48, 0.06) 0%,
+      transparent 50%
+    );
+}
+
+/* HEADER – עכשיו רקע שחור מלא, בלי שקיפות, בלי blur */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #000000; /* שחור טהור – pure black */
+  border-bottom: 1px solid rgba(255, 59, 48, 0.15);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Container של ה-header - חשוב למרכוז */
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 5%;
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo {
+  flex: 0 0 auto;
+  width: min(200px, 45vw);
+  height: auto;
+  text-align: center;
+
+  /* חשוב: אין אינטראקציה כלל */
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  cursor: default;
+}
+
+/* התמונה בתוך הלוגו - אין סגנונות hover/outline/transform */
+.logo .logo-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.98;
+  pointer-events: none;
+  cursor: default;
+  border: none;
+  outline: none;
+  transition: none; /* מבטל אנימציות מיותרות עבור הלוגו */
+}
+
+/* מובייל */
+@media (max-width: 768px) {
+  .logo {
+    width: 62px;
+  }
+
+  header .container {
+    padding: 1rem 4%;
+    justify-content: space-between;
+  }
+
+  nav#nav {
+    display: none; /* אם התפריט מוסתר במובייל */
+  }
+}
+
+/* ניווט */
+nav a {
+  color: var(--text-muted);
+  margin: 0 1.8rem;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: var(--transition);
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -6px;
+  left: 0;
+  background: var(--primary-red);
+  transition: var(--transition);
+}
+nav a:hover,
+nav a:focus {
+  color: var(--primary-red);
+  outline: none;
+}
+nav a:hover::after,
+nav a:focus::after {
+  width: 100%;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  min-height: 650px;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.85)),
+    url("images/header.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero-content h1 {
+  background: linear-gradient(45deg, var(--primary-red), #ff8a80);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+.hero-content p {
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+}
+
+.cta-btn {
+  background: linear-gradient(45deg, var(--primary-red), #ff6b5e);
+  color: white;
+  padding: 18px 60px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: var(--shadow-glow);
+  transition: var(--transition);
+}
+.cta-btn:hover {
+  transform: translateY(-5px) scale(1.08);
+}
+
+/* =============================================
+   MENU SECTION – VERTICAL PREMIUM DESIGN
+   ============================================= */
+
+.menu-section {
+  padding: 100px 20px;
+  background: var(--dark-bg);
+}
+
+/* כותרת ראשית */
+.section-title {
+  display: block;
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--primary-red);
+  margin: 14px auto 0;
+  border-radius: 2px;
+}
+
+/* כותרת קטגוריה */
+.category-header {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: white;
+  margin: 50px 0 25px;
+  padding: 14px 20px;
+  border-right: 5px solid var(--primary-red);
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.05), transparent);
+  border-radius: 8px;
+}
+
+/* GRID אנכי */
+.menu-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* פריט בתפריט */
+.menu-item {
+  background: linear-gradient(145deg, #1f1f1f, #181818);
+  padding: 20px 24px;
+  border-radius: 14px;
+  border: 1px solid #2a2a2a;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* אפקט מעבר עכבר לפריטים בתפריט בלבד */
+.menu-item:hover {
+  border-color: var(--primary-red);
+  transform: translateX(-6px);
+  background: linear-gradient(145deg, #252525, #1b1b1b);
+}
+
+/* שם מוצר */
+.menu-item .item-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* מחיר */
+.menu-item .item-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f4a261;
+  margin-right: 20px;
+}
+
+/* קו מפריד עדין */
+.menu-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 24px;
+  left: 24px;
+  height: 1px;
+  background: linear-gradient(to left, transparent, #333, transparent);
+}
+
+/* מובייל */
+@media (max-width: 600px) {
+  .menu-item {
+    padding: 18px;
+  }
+
+  .item-name {
+    font-size: 1.1rem;
+  }
+
+  .item-price {
+    font-size: 1.1rem;
+  }
+}
+
+.item-info h4 {
+  color: #f4a261;
+  margin-bottom: 6px;
+}
+.item-info p {
+  color: #bbb;
+  font-size: 0.95rem;
+}
+.price {
+  background: var(--primary-red);
+  color: white;
+  padding: 8px 18px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.35rem;
+  white-space: nowrap;
+}
+.extras-box {
+  margin-top: 30px;
+  padding: 20px;
+  background: #1e1e1e;
+  border-radius: 12px;
+  border-right: 5px solid #f4a261;
+  color: #ddd;
+  font-size: 0.95rem;
+}
+.extras-box h4 {
+  color: #f4a261;
+  margin-bottom: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .menu-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  .price {
+    margin-top: 12px;
+  }
+}
