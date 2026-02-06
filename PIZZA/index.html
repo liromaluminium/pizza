@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>פיצה בלה • הטעם האיטלקי</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav id="nav" aria-label="תפריט ניווט ראשי">
+          <a href="#home">בית</a>
+          <a href="#menu">תפריט</a>
+        </nav>
+
+        <!-- הלוגו עכשיו אינו לחיץ כלל -->
+        <div
+          class="logo"
+          aria-hidden="false"
+          role="img"
+          aria-label="לוגו פיצה בלה"
+        >
+          <img src="images/logo.jpg" alt="פיצה בלה" class="logo-img" />
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>האיטלקית השכנותית הטובה בעיר</h1>
+        <p>תנור אבן • בצק דק • חומרים טריים</p>
+        <button
+          onclick="
+            document
+              .getElementById('menu')
+              .scrollIntoView({ behavior: 'smooth' })
+          "
+          class="cta-btn"
+        >
+          הזמן עכשיו
+        </button>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu" class="menu-section">
+      <div class="container">
+        <h2 class="section-title">התפריט העשיר והמגוון שלנו (כשר)</h2>
+
+        <h3 class="category-header">🍕 הפיצות שלנו</h3>
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="item-info">
+              <h4>מגש פיצה M</h4>
+              <p>הפיצה האישית המושלמת</p>
+            </div>
+            <span class="price">₪38</span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <h4>מבצע! 2 מגשי M</h4>
+              <p>הדיל המשתלם לזוג</p>
+            </div>
+            <span class="price">₪70</span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <h4>מגש משפחתי L</h4>
+              <p>
+                6 משולשים | פיצה עבה בתוספת 7 ₪<br /><strong>אופציות:</strong>
+                חריפה אש / עבה / אלפרדו
+              </p>
+            </div>
+            <span class="price">₪55</span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <h4>מבצע! 2 מגשי L</h4>
+              <p>הבחירה המשפחתית הפופולרית</p>
+            </div>
+            <span class="price">₪97</span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <h4>מבצע! 3 מגשי L</h4>
+              <p>8 משולשים למגש - חגיגה אמיתית</p>
+            </div>
+            <span class="price">₪127</span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <h4>מגש XL קלאסי</h4>
+              <p>הפיצה הכי גדולה בעיר!</p>
+            </div>
+            <span class="price">₪77</span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <h4>מגש XL + שתייה 1.5 ל'</h4>
+              <p>ארוחה קבוצתית</p>
+            </div>
+            <span class="price">₪80</span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <h4>2 מגשי XL + שתייה 1.5 ל'</h4>
+              <p>הדיל הכי ענק שלנו</p>
+            </div>
+            <span class="price">₪137</span>
+          </div>
+        </div>
+
+        <h3 class="category-header">✨ מיוחדים למביני עניין</h3>
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="item-info">
+              <h4>חדש! פיצה אלפרדו M</h4>
+              <p>רוטב שמנת עשיר</p>
+            </div>
+            <span class="price">₪45</span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <h4>חדש! פיצה אלפרדו L</h4>
+              <p>שמנת מפנקת על בצק פריך</p>
+            </div>
+            <span class="price">₪60</span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <h4>חדש! פיצה אלפרדו XL</h4>
+              <p>החוויה האיטלקית בגרסה הענקית</p>
+            </div>
+            <span class="price">₪90</span>
+          </div>
+        </div>
+
+        <h3 class="category-header">🥐 מאפים מהטאבון</h3>
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="item-info">
+              <h4>זיוה ביתית / מלוואח מגולגל</h4>
+              <p>מוגש עם רסק עגבניות, חריף וביצה קשה</p>
+            </div>
+            <span class="price">₪35 / 28</span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <h4>לחם שום מוקרם</h4>
+              <p>שום טרי, שמן זית וגבינה מותכת</p>
+            </div>
+            <span class="price">₪25</span>
+          </div>
+        </div>
+
+        <div class="extras-box">
+          <h4>🥗 תוספות לבחירה:</h4>
+          <p>
+            זיתים, פטריות, תירס, בצל, עגבניות, גמבה, אקסטרה גבינה, בולגרית,
+            טונה, ביצה, חצילים, אננס, אנשובי, פלפל חריף.<br /><strong
+              >בטטה בתוספת 7 ₪</strong
+            >
+          </p>
+        </div>
+
+        <div class="menu-grid" style="margin-top: 30px">
+          <div class="menu-item">
+            <div class="item-info">
+              <h4>🥤 שתייה קלה 1.5 ל'</h4>
+              <p>מגוון טעמים</p>
+            </div>
+            <span class="price">₪13</span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <h4>🍰 קינוחים (בוואריה / זיוה שוקולד)</h4>
+              <p>הסיומת המתוקה</p>
+            </div>
+            <span class="price">₪22 / 38</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
